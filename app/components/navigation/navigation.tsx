@@ -1,6 +1,14 @@
 import { NavLink } from "react-router";
 import { useEffect, useState } from "react";
 import styles from "./navigation.module.css";
+//Import Mixpanel SDK
+import mixpanel from "mixpanel-browser";
+
+// Create an instance of the Mixpanel object, your token is already added to this snippet
+mixpanel.init('663eefe93c01d6d88eb56cd64c6cbaa3', {
+  autocapture: true,
+  record_sessions_percent: 100,
+})
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
